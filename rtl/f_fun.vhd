@@ -1,22 +1,19 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    18:16:46 02/19/2013 
--- Design Name: 
--- Module Name:    f_fun - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
+
+-- Copyright (c) 2013 Antonio de la Piedra
+ 
+-- This program is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- (at your option) any later version.
+  
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+   
+-- You should have received a copy of the GNU General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -119,8 +116,6 @@ begin
 					 r_in(8)  & r_in(7)   & r_in(6)   & r_in(5)   & r_in(4)   & r_in(3)   &
 					 r_in(4)  & r_in(3)   & r_in(2)   & r_in(1)   & r_in(0)   & r_in(31);
 					 
---	DSP_XOR_0 : dsp_xor_48 port map (clk, blk_exp_s, k_in, post_exp_key_add_s);
-
 	post_exp_key_add_s <= blk_exp_s xor k_in;
 
 	S_BOX_0 : s_box_l_dual_dram port map (post_exp_key_add_s(47 downto 42), 
